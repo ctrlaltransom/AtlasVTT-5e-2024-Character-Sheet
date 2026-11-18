@@ -37,7 +37,7 @@
 
 ### Integrations
 - This character sheet is the basis of [the D&D Beyond importer plugin](https://community.obsidian.md/plugins/dndbeyond-importer-for-atlas) by @young_george from the Discord.
-- Also by @young_george, this repo is intended to work with the Statblock Template Installer for Atlas. More about that below.
+- Also by @young_george, this repo is intended to work with the [Statblock Template Installer for Atlas](https://community.obsidian.md/plugins/statblock-template-installer-for-atlas). More about that below.
 
 ### Modified Sheets
 - You can modify this sheet to play homebrewed or other modified versions of D&D like Mage Hand Press' sci-fi version, Dark Matter. I modified this template for Dark Matter already—it is included in this repository as `Dark-Matter-Character-Sheet.atlastemplate` (and posted [here](https://discord.com/channels/1551361618305224816/1572354559685435442)).
@@ -47,7 +47,7 @@
 # Downloads
 
 ## Automatic Installation (Recommended)
-If you use the **Statblock Template Installer for Atlas** community plugin, you can install and update all templates, layout snippets, and themes in one step:
+If you use the **[Statblock Template Installer for Atlas](https://community.obsidian.md/plugins/statblock-template-installer-for-atlas)** community plugin, you can install and update all templates, layout snippets, and themes in one step:
 1. Open Obsidian **Settings → Statblock Template Installer for Atlas**.
 2. Click the **`+`** button next to **Templates**.
 3. Paste this repository URL and click **Install**:
