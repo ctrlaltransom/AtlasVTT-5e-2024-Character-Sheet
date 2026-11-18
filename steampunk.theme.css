@@ -1,8 +1,3 @@
-/* ==========================================================================
-   STYLE: EBERRON ARTIFICER (GEARWHEEL BRACKETS, BRASS & LIGHTNING AMBER)
-   File: steampunk.css
-   ========================================================================== */
-
 .atlas-statblock,
 .atlas-sb-pane-card,
 .atlas-sb-sheet {
@@ -25,40 +20,78 @@
   --sb-art-iron: #451a03;
   --sb-art-glow: rgba(245, 158, 11, 0.3);
 
+  /* Seamless 240x240 Riveted Iron Boilerplate Seams (bumped visibility) */
+  --sb-art-plates: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cline x1='0' y1='120' x2='240' y2='120' stroke='%23050403' stroke-width='2' stroke-opacity='0.85'/%3E%3Cline x1='0' y1='122' x2='240' y2='122' stroke='%23f59e0b' stroke-width='0.9' stroke-opacity='0.24'/%3E%3Cline x1='120' y1='0' x2='120' y2='120' stroke='%23050403' stroke-width='2' stroke-opacity='0.85'/%3E%3Cline x1='122' y1='0' x2='122' y2='120' stroke='%23f59e0b' stroke-width='0.9' stroke-opacity='0.24'/%3E%3Cline x1='40' y1='120' x2='40' y2='240' stroke='%23050403' stroke-width='2' stroke-opacity='0.85'/%3E%3Cline x1='42' y1='120' x2='42' y2='240' stroke='%23f59e0b' stroke-width='0.9' stroke-opacity='0.24'/%3E%3Cg fill='%23f59e0b' fill-opacity='0.30'%3E%3Ccircle cx='16' cy='113' r='1.8'/%3E%3Ccircle cx='48' cy='113' r='1.8'/%3E%3Ccircle cx='80' cy='113' r='1.8'/%3E%3Ccircle cx='112' cy='113' r='1.8'/%3E%3Ccircle cx='129' cy='113' r='1.8'/%3E%3Ccircle cx='160' cy='113' r='1.8'/%3E%3Ccircle cx='192' cy='113' r='1.8'/%3E%3Ccircle cx='224' cy='113' r='1.8'/%3E%3Ccircle cx='16' cy='128' r='1.8'/%3E%3Ccircle cx='48' cy='128' r='1.8'/%3E%3Ccircle cx='80' cy='128' r='1.8'/%3E%3Ccircle cx='112' cy='128' r='1.8'/%3E%3Ccircle cx='144' cy='128' r='1.8'/%3E%3Ccircle cx='176' cy='128' r='1.8'/%3E%3Ccircle cx='208' cy='128' r='1.8'/%3E%3Ccircle cx='113' cy='16' r='1.8'/%3E%3Ccircle cx='113' cy='48' r='1.8'/%3E%3Ccircle cx='113' cy='80' r='1.8'/%3E%3Ccircle cx='128' cy='16' r='1.8'/%3E%3Ccircle cx='128' cy='48' r='1.8'/%3E%3Ccircle cx='128' cy='80' r='1.8'/%3E%3Ccircle cx='33' cy='148' r='1.8'/%3E%3Ccircle cx='33' cy='180' r='1.8'/%3E%3Ccircle cx='33' cy='212' r='1.8'/%3E%3Ccircle cx='48' cy='148' r='1.8'/%3E%3Ccircle cx='48' cy='180' r='1.8'/%3E%3Ccircle cx='48' cy='212' r='1.8'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* Fixed-Aspect Riveted Corner Gusset Plates (never stretch vertically) */
+  --sb-art-gusset-tl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cpath d='M4,72 L4,4 L72,4 L72,18 L28,18 L18,28 L18,72 Z' fill='%23282119' fill-opacity='0.72' stroke='%23d97706' stroke-width='1.1' stroke-opacity='0.42'/%3E%3Ccircle cx='11' cy='11' r='2.3' fill='%23fbbf24' fill-opacity='0.52'/%3E%3Ccircle cx='34' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='62' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='34' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='62' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3C/svg%3E");
+  --sb-art-gusset-tr: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg transform='translate(84 0) scale(-1 1)'%3E%3Cpath d='M4,72 L4,4 L72,4 L72,18 L28,18 L18,28 L18,72 Z' fill='%23282119' fill-opacity='0.72' stroke='%23d97706' stroke-width='1.1' stroke-opacity='0.42'/%3E%3Ccircle cx='11' cy='11' r='2.3' fill='%23fbbf24' fill-opacity='0.52'/%3E%3Ccircle cx='34' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='62' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='34' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='62' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3C/g%3E%3C/svg%3E");
+  --sb-art-gusset-bl: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg transform='translate(0 84) scale(1 -1)'%3E%3Cpath d='M4,72 L4,4 L72,4 L72,18 L28,18 L18,28 L18,72 Z' fill='%23282119' fill-opacity='0.72' stroke='%23d97706' stroke-width='1.1' stroke-opacity='0.42'/%3E%3Ccircle cx='11' cy='11' r='2.3' fill='%23fbbf24' fill-opacity='0.52'/%3E%3Ccircle cx='34' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='62' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='34' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='62' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3C/g%3E%3C/svg%3E");
+  --sb-art-gusset-br: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='84' viewBox='0 0 84 84'%3E%3Cg transform='translate(84 84) scale(-1 -1)'%3E%3Cpath d='M4,72 L4,4 L72,4 L72,18 L28,18 L18,28 L18,72 Z' fill='%23282119' fill-opacity='0.72' stroke='%23d97706' stroke-width='1.1' stroke-opacity='0.42'/%3E%3Ccircle cx='11' cy='11' r='2.3' fill='%23fbbf24' fill-opacity='0.52'/%3E%3Ccircle cx='34' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='62' cy='11' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='34' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3Ccircle cx='11' cy='62' r='1.9' fill='%23d97706' fill-opacity='0.46'/%3E%3C/g%3E%3C/svg%3E");
+
   background-color: var(--sb-art-bg) !important;
   background-image: 
-    radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 45%),
-    linear-gradient(180deg, #18140f 0%, #0e0c0a 100%) !important;
+    var(--sb-art-gusset-tl),
+    var(--sb-art-gusset-tr),
+    var(--sb-art-gusset-bl),
+    var(--sb-art-gusset-br),
+    radial-gradient(ellipse 85% 75% at 50% 45%, rgba(19, 17, 14, 0.14) 0%, rgba(14, 12, 10, 0.02) 100%),
+    radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 48%),
+    radial-gradient(ellipse 90% 35% at 50% 100%, rgba(217, 119, 6, 0.15), transparent 68%),
+    var(--sb-art-plates),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='brushedMetal'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23brushedMetal)' opacity='0.04'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #191510 0%, #0e0c0a 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat !important;
+  background-position: top left, top right, bottom left, bottom right, center, top right, bottom center, top left, top left, center !important;
+  background-size: 84px 84px, 84px 84px, 84px 84px, 84px 84px, 100% 100%, 100% 100%, 100% 100%, 240px 240px, 200px 200px, 100% 100% !important;
 
   color: var(--text-normal) !important;
   border-radius: 4px !important;
   padding: 18px 20px !important;
 
+  /* Stacking context so z-index: -1 gears tuck their 4th quadrant behind the sheet */
   position: relative !important;
+  z-index: 1 !important;
   overflow: visible !important;
 
   border: 2px solid var(--sb-art-brass) !important;
   box-shadow: 
     inset 0 0 0 2px var(--sb-art-card),
     inset 0 0 0 3px var(--sb-art-iron),
-    0 10px 28px rgba(0, 0, 0, 0.7) !important;
+    inset 0 -16px 28px -12px rgba(217, 119, 6, 0.22),
+    0 10px 28px rgba(0, 0, 0, 0.75) !important;
 }
 
-/* --- Clockwork Gear & Rivet Corner Flourishes --- */
+/* Fix duplicate border/background when Atlas nests .atlas-sb-sheet or .atlas-sb-pane-card inside .atlas-statblock */
+:is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) :is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::before,
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* --- Spoked Brass & Iron Corner Gears (compact 54px, 4th quadrant tucked behind the sheet) --- */
 .atlas-statblock::before,
 .atlas-sb-pane-card::before {
   content: "";
   position: absolute;
   top: -16px;
   left: -16px;
-  width: 85px;
-  height: 85px;
+  width: 54px;
+  height: 54px;
   pointer-events: none;
-  z-index: 10;
+  z-index: -1;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 85 85'%3E%3Cpath d='M10,65 L10,20 C10,14 14,10 20,10 L65,10' fill='none' stroke='%2378350f' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M10,65 L10,20 C10,14 14,10 20,10 L65,10' fill='none' stroke='%23d97706' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='18' r='12' fill='%23282119' stroke='%23fbbf24' stroke-width='2' stroke-dasharray='4 2'/%3E%3Ccircle cx='18' cy='18' r='5' fill='%23d97706'/%3E%3Ccircle cx='45' cy='10' r='2.5' fill='%23fbbf24'/%3E%3Ccircle cx='10' cy='45' r='2.5' fill='%23fbbf24'/%3E%3Cline x1='18' y1='18' x2='38' y2='38' stroke='%23fbbf24' stroke-width='1.5'/%3E%3C/svg%3E");
-  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.4));
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cg id='gearTooth'%3E%3Cpolygon points='45,4 55,4 57,15 43,15' fill='%23d97706' stroke='%23451a03' stroke-width='1.2'/%3E%3C/g%3E%3C/defs%3E%3Cg%3E%3Cuse href='%23gearTooth'/%3E%3Cuse href='%23gearTooth' transform='rotate(30 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(60 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(90 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(120 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(150 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(180 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(210 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(240 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(270 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(300 50 50)'/%3E%3Cuse href='%23gearTooth' transform='rotate(330 50 50)'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='36' fill='%23282119' stroke='%23fbbf24' stroke-width='2.5'/%3E%3Ccircle cx='50' cy='50' r='29' fill='%2313110e' stroke='%2378350f' stroke-width='1.5'/%3E%3Cg stroke='%23d97706' stroke-width='3.5' stroke-linecap='round'%3E%3Cline x1='50' y1='21' x2='50' y2='79'/%3E%3Cline x1='24.9' y1='35.5' x2='75.1' y2='64.5'/%3E%3Cline x1='24.9' y1='64.5' x2='75.1' y2='35.5'/%3E%3C/g%3E%3Cg fill='%23fbbf24'%3E%3Ccircle cx='50' cy='17.5' r='1.5'/%3E%3Ccircle cx='66.2' cy='21.9' r='1.5'/%3E%3Ccircle cx='78.1' cy='33.8' r='1.5'/%3E%3Ccircle cx='82.5' cy='50' r='1.5'/%3E%3Ccircle cx='78.1' cy='66.2' r='1.5'/%3E%3Ccircle cx='66.2' cy='78.1' r='1.5'/%3E%3Ccircle cx='50' cy='82.5' r='1.5'/%3E%3Ccircle cx='33.8' cy='78.1' r='1.5'/%3E%3Ccircle cx='21.9' cy='66.2' r='1.5'/%3E%3Ccircle cx='17.5' cy='50' r='1.5'/%3E%3Ccircle cx='21.9' cy='33.8' r='1.5'/%3E%3Ccircle cx='33.8' cy='21.9' r='1.5'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='11' fill='%23282119' stroke='%23fbbf24' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='4.5' fill='%23d97706'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
 }
 
 .atlas-statblock::after,
@@ -67,15 +100,15 @@
   position: absolute;
   bottom: -16px;
   right: -16px;
-  width: 85px;
-  height: 85px;
+  width: 54px;
+  height: 54px;
   pointer-events: none;
-  z-index: 10;
+  z-index: -1;
   background-repeat: no-repeat;
   background-size: contain;
-  transform: rotate(180deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 85 85'%3E%3Cpath d='M10,65 L10,20 C10,14 14,10 20,10 L65,10' fill='none' stroke='%2378350f' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M10,65 L10,20 C10,14 14,10 20,10 L65,10' fill='none' stroke='%23d97706' stroke-width='2' stroke-linecap='round'/%3E%3Ccircle cx='18' cy='18' r='12' fill='%23282119' stroke='%23fbbf24' stroke-width='2' stroke-dasharray='4 2'/%3E%3Ccircle cx='18' cy='18' r='5' fill='%23d97706'/%3E%3Ccircle cx='45' cy='10' r='2.5' fill='%23fbbf24'/%3E%3Ccircle cx='10' cy='45' r='2.5' fill='%23fbbf24'/%3E%3Cline x1='18' y1='18' x2='38' y2='38' stroke='%23fbbf24' stroke-width='1.5'/%3E%3C/svg%3E");
-  filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.4));
+  transform: rotate(15deg);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cg id='gearTooth2'%3E%3Cpolygon points='45,4 55,4 57,15 43,15' fill='%23d97706' stroke='%23451a03' stroke-width='1.2'/%3E%3C/g%3E%3C/defs%3E%3Cg%3E%3Cuse href='%23gearTooth2'/%3E%3Cuse href='%23gearTooth2' transform='rotate(30 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(60 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(90 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(120 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(150 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(180 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(210 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(240 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(270 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(300 50 50)'/%3E%3Cuse href='%23gearTooth2' transform='rotate(330 50 50)'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='36' fill='%23282119' stroke='%23fbbf24' stroke-width='2.5'/%3E%3Ccircle cx='50' cy='50' r='29' fill='%2313110e' stroke='%2378350f' stroke-width='1.5'/%3E%3Cg stroke='%23d97706' stroke-width='3.5' stroke-linecap='round'%3E%3Cline x1='50' y1='21' x2='50' y2='79'/%3E%3Cline x1='24.9' y1='35.5' x2='75.1' y2='64.5'/%3E%3Cline x1='24.9' y1='64.5' x2='75.1' y2='35.5'/%3E%3C/g%3E%3Cg fill='%23fbbf24'%3E%3Ccircle cx='50' cy='17.5' r='1.5'/%3E%3Ccircle cx='66.2' cy='21.9' r='1.5'/%3E%3Ccircle cx='78.1' cy='33.8' r='1.5'/%3E%3Ccircle cx='82.5' cy='50' r='1.5'/%3E%3Ccircle cx='78.1' cy='66.2' r='1.5'/%3E%3Ccircle cx='66.2' cy='78.1' r='1.5'/%3E%3Ccircle cx='50' cy='82.5' r='1.5'/%3E%3Ccircle cx='33.8' cy='78.1' r='1.5'/%3E%3Ccircle cx='21.9' cy='66.2' r='1.5'/%3E%3Ccircle cx='17.5' cy='50' r='1.5'/%3E%3Ccircle cx='21.9' cy='33.8' r='1.5'/%3E%3Ccircle cx='33.8' cy='21.9' r='1.5'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='11' fill='%23282119' stroke='%23fbbf24' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='4.5' fill='%23d97706'/%3E%3C/svg%3E");
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 5px rgba(245, 158, 11, 0.35));
 }
 
 /* --- Typography & Links --- */
@@ -121,6 +154,7 @@
   letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
   border-bottom: 2px solid var(--sb-art-brass) !important;
+  box-shadow: 0 1px 0 rgba(251, 191, 36, 0.16) !important;
   padding-bottom: 3px !important;
   margin-top: 10px !important;
   margin-bottom: 6px !important;
@@ -131,19 +165,39 @@
 .atlas-sb-pane-card [data-block="divider"] {
   border: none !important;
   height: 2px !important;
-  background: linear-gradient(90deg, transparent 0%, var(--sb-art-brass-bright) 50%, transparent 100%) !important;
-  margin: 10px 0 !important;
-  opacity: 0.8 !important;
+  background: linear-gradient(90deg, transparent 0%, var(--sb-art-iron) 20%, var(--sb-art-brass-bright) 50%, var(--sb-art-iron) 80%, transparent 100%) !important;
+  margin: 12px 0 !important;
+  opacity: 0.85 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.atlas-statblock hr::after,
+.atlas-statblock [data-block="divider"]::after,
+.atlas-sb-pane-card [data-block="divider"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 14px !important;
+  height: 14px !important;
+  transform: translate(-50%, -50%) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='6.5' fill='%2313110e' stroke='%23fbbf24' stroke-width='2' stroke-dasharray='2.6 1.6'/%3E%3Ccircle cx='10' cy='10' r='2.5' fill='%23d97706'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.5)) !important;
+  pointer-events: none !important;
 }
 
 /* Metric Boxes */
 .atlas-statblock [data-block="metric"],
 .atlas-sb-pane-card [data-block="metric"] {
-  background: var(--sb-art-elevated) !important;
+  background: linear-gradient(180deg, rgba(40, 33, 25, 0.94) 0%, rgba(28, 24, 19, 0.9) 100%) !important;
   border: 1px solid var(--sb-art-iron) !important;
   border-top: 2px solid var(--sb-art-brass-bright) !important;
   border-radius: 4px !important;
   padding: 6px 10px !important;
+  box-shadow: inset 0 1px 0 rgba(254, 243, 199, 0.06) !important;
 }
 
 /* Ability Scores & Currency Tables */
@@ -157,8 +211,6 @@
   --table-border-color: transparent !important;
   overflow: visible !important;
 }
-
-
 
 .atlas-statblock [data-block-id="0ghhsttd"],
 .atlas-sb-pane-card [data-block-id="0ghhsttd"] {
@@ -176,7 +228,7 @@
 
 .atlas-statblock [data-block-id="0ghhsttd"] th,
 .atlas-sb-pane-card [data-block-id="0ghhsttd"] th {
-  background: var(--sb-art-elevated) !important;
+  background: rgba(40, 33, 25, 0.92) !important;
   color: var(--sb-art-brass-bright) !important;
   border: 1px solid var(--sb-art-iron) !important;
   border-radius: 4px !important;
@@ -188,7 +240,7 @@
 
 .atlas-statblock [data-block-id="0ghhsttd"] td,
 .atlas-sb-pane-card [data-block-id="0ghhsttd"] td {
-  background: var(--sb-art-card) !important;
+  background: rgba(28, 24, 19, 0.88) !important;
   color: var(--text-normal) !important;
   border: 1px solid var(--sb-art-iron) !important;
   border-radius: 4px !important;
@@ -206,7 +258,7 @@
 /* Tabs */
 .atlas-statblock [role="tablist"],
 .atlas-sb-pane-card [role="tablist"] {
-  background: var(--sb-art-card) !important;
+  background: rgba(28, 24, 19, 0.9) !important;
   border: 1px solid var(--sb-art-iron) !important;
   border-radius: 4px !important;
   padding: 2px !important;
@@ -232,6 +284,7 @@
 .atlas-sb-pane-card [role="tab"][aria-selected="true"] {
   background: var(--sb-art-brass) !important;
   color: #fff !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.4) !important;
 }
 
 /* Counter Pips (Brass Rivets) */
@@ -316,7 +369,9 @@
 .atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb {
   background-color: #13110e !important;
   border: 1px solid #fbbf24 !important;
-}/* ==========================================================================
+}
+
+/* ==========================================================================
    SCENE TOKEN PREVIEW WINDOW FIX
    ========================================================================== */
 
@@ -326,8 +381,17 @@
 .atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
   background-color: var(--sb-art-bg) !important;
   background-image: 
-    radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 45%),
-    linear-gradient(180deg, #18140f 0%, #0e0c0a 100%) !important;
+    var(--sb-art-gusset-tl),
+    var(--sb-art-gusset-tr),
+    var(--sb-art-gusset-bl),
+    var(--sb-art-gusset-br),
+    radial-gradient(ellipse 85% 75% at 50% 45%, rgba(19, 17, 14, 0.14) 0%, rgba(14, 12, 10, 0.02) 100%),
+    radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 48%),
+    var(--sb-art-plates),
+    linear-gradient(180deg, #191510 0%, #0e0c0a 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: top left, top right, bottom left, bottom right, center, top right, top left, center !important;
+  background-size: 84px 84px, 84px 84px, 84px 84px, 84px 84px, 100% 100%, 100% 100%, 240px 240px, 100% 100% !important;
   color: var(--text-normal) !important;
   --text-normal: #fef3c7 !important;
   --text-muted: #d97706 !important;
@@ -343,6 +407,7 @@
   border-radius: 4px !important;
   overflow: visible !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: EBERRON ARTIFICER INPUT, DROPDOWN & ENTRY EDITOR THEME
    ========================================================================== */
@@ -450,6 +515,7 @@
     -webkit-box-shadow: 0 0 0px 1000px var(--sb-art-card) inset !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
+
 /* ==========================================================================
    RESET COUNTER BUTTON: HOLLOW INTERIOR & CLOCKWORK BRASS STROKE
    ========================================================================== */
@@ -494,6 +560,7 @@
   filter: drop-shadow(0 0 8px var(--sb-art-glow, rgba(245, 158, 11, 0.6))) !important;
   transform: rotate(-30deg) !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: RADIX & LISTBOX DROPDOWN POPUPS (EBERRON ARTIFICER)
    ========================================================================== */
@@ -548,6 +615,7 @@
   background: #451a03 !important;
   height: 1px !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: EBERRON ARTIFICER LINK HOVER POPOVERS & NATIVE SHEET TABLES
    ========================================================================== */
@@ -556,7 +624,11 @@
   background-color: var(--sb-art-bg, #13110e) !important;
   background-image: 
     radial-gradient(circle at 100% 0%, rgba(245, 158, 11, 0.12), transparent 50%),
+    var(--sb-art-plates),
     linear-gradient(180deg, #18140f 0%, #0e0c0a 100%) !important;
+  background-repeat: no-repeat, repeat, no-repeat !important;
+  background-position: top right, top left, center !important;
+  background-size: 100% 100%, 240px 240px, 100% 100% !important;
   border: 1.5px solid var(--sb-art-brass, #d97706) !important;
   border-radius: 4px !important;
   box-shadow: 
@@ -618,7 +690,7 @@
 .atlas-statblock .atlas-sb-sheet-table__grid thead th,
 .atlas-sb-pane-card .atlas-sb-sheet-table__grid thead th,
 .atlas-sb-sheet .atlas-sb-sheet-table__grid thead th {
-  background-color: var(--sb-art-elevated, #282119) !important;
+  background-color: rgba(40, 33, 25, 0.92) !important;
   color: var(--sb-art-brass-bright, #fbbf24) !important;
   border-color: var(--sb-art-iron, #451a03) !important;
   font-weight: 700 !important;
@@ -627,7 +699,7 @@
 .atlas-statblock .atlas-sb-sheet-table__grid tbody td,
 .atlas-sb-pane-card .atlas-sb-sheet-table__grid tbody td,
 .atlas-sb-sheet .atlas-sb-sheet-table__grid tbody td {
-  background-color: var(--sb-art-card, #1c1813) !important;
+  background-color: rgba(28, 24, 19, 0.88) !important;
   color: var(--text-normal, #fef3c7) !important;
   border-color: var(--sb-art-iron, #451a03) !important;
 }
@@ -635,6 +707,7 @@
 .atlas-sb-sheet-table__handle svg {
   stroke: var(--sb-art-brass-bright, #fbbf24) !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: ACTION-USE PIPS & OPEN ABILITY SCORES (EBERRON ARTIFICER)
    ========================================================================== */

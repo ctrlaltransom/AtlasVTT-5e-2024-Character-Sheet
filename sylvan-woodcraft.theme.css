@@ -1,6 +1,6 @@
 /* ==========================================================================
-   STYLE 3 (SYLVAN WOODCRAFT WITH OVERHANGING VINES & LEAVES)
-   File: sylvan-woodcraft.css
+   STYLE 3: SYLVAN WOODCRAFT (CLEAN FOREST FLOOR & GROUNDED ROOT FOOTER)
+   File: sylvan-woodcraft.theme.css
    ========================================================================== */
 
 .atlas-statblock,
@@ -27,10 +27,18 @@
   --sylvan-leaf-glow: rgba(74, 222, 128, 0.22);
   --sylvan-amber: #e09f3e;
 
+  /* Clean, grounded root & river stone footer bed (anchored strictly to bottom) */
+  --sylvan-footer-bed: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 160' preserveAspectRatio='none'%3E%3C!-- Mossy River Stones along Base --%3E%3Cellipse cx='75' cy='148' rx='42' ry='16' fill='%231b241d' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='128' cy='152' rx='28' ry='11' fill='%23161c18' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='28' cy='154' rx='30' ry='12' fill='%2318201a' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='525' cy='146' rx='44' ry='17' fill='%231b241d' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='472' cy='152' rx='29' ry='11' fill='%23161c18' stroke='%230e1410' stroke-width='1.5'/%3E%3Cellipse cx='576' cy='154' rx='30' ry='12' fill='%2318201a' stroke='%230e1410' stroke-width='1.5'/%3E%3C!-- Gnarled Bark Roots --%3E%3Cpath d='M-10,165 C35,135 68,105 102,72 C118,56 130,42 145,28' fill='none' stroke='%23140e09' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M-10,165 C35,135 68,105 102,72 C118,56 130,42 145,28' fill='none' stroke='%23281d14' stroke-width='5.5' stroke-linecap='round'/%3E%3Cpath d='M45,132 C82,126 122,136 165,148 C195,156 225,160 255,162' fill='none' stroke='%231c140e' stroke-width='6' stroke-linecap='round'/%3E%3Cpath d='M610,162 C565,132 532,102 498,68 C482,52 470,38 455,24' fill='none' stroke='%23140e09' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M610,162 C565,132 532,102 498,68 C482,52 470,38 455,24' fill='none' stroke='%23281d14' stroke-width='5.5' stroke-linecap='round'/%3E%3Cpath d='M555,130 C518,124 478,134 435,146 C405,154 375,158 345,162' fill='none' stroke='%231c140e' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E");
+
   background-color: var(--sylvan-bg) !important;
   background-image: 
+    var(--sylvan-footer-bed),
     radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
-    linear-gradient(180deg, rgba(33, 26, 20, 0.55) 0%, transparent 100%) !important;
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='forestGrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23forestGrain)' opacity='0.035'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat !important;
+  background-position: bottom center, top left, top left, center !important;
+  background-size: 100% 120px, 100% 100%, 200px 200px, 100% 100% !important;
 
   color: var(--text-normal) !important;
   border-radius: 8px !important;
@@ -43,7 +51,23 @@
   box-shadow: 
     inset 0 0 0 2px var(--sylvan-bg),
     inset 0 0 0 3px rgba(74, 222, 128, 0.2),
+    inset 0 0 18px rgba(8, 14, 10, 0.65),
     0 10px 28px rgba(0, 0, 0, 0.65) !important;
+}
+
+/* Fix duplicate border/background when Atlas nests .atlas-sb-sheet or .atlas-sb-pane-card inside .atlas-statblock */
+:is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) :is(.atlas-statblock, .atlas-sb-pane-card, .atlas-sb-sheet) {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-image: none !important;
+  padding: 0 !important;
+}
+
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::before,
+:is(.atlas-statblock, .atlas-sb-pane-card) :is(.atlas-statblock, .atlas-sb-pane-card)::after {
+  content: none !important;
+  display: none !important;
 }
 
 /* Corner Vines */
@@ -136,6 +160,7 @@
   text-transform: uppercase !important;
   font-weight: 700 !important;
   border-bottom: 2px solid var(--sylvan-border) !important;
+  box-shadow: 0 1px 0 rgba(74, 222, 128, 0.12) !important;
   padding-bottom: 3px !important;
   margin-top: 10px !important;
   margin-bottom: 6px !important;
@@ -147,18 +172,38 @@
   border: none !important;
   height: 2px !important;
   background: linear-gradient(90deg, transparent 0%, var(--sylvan-wood-trim) 20%, var(--sylvan-leaf) 50%, var(--sylvan-wood-trim) 80%, transparent 100%) !important;
-  margin: 10px 0 !important;
-  opacity: 0.8 !important;
+  margin: 12px 0 !important;
+  opacity: 0.85 !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.atlas-statblock hr::after,
+.atlas-statblock [data-block="divider"]::after,
+.atlas-sb-pane-card [data-block="divider"]::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 18px !important;
+  height: 12px !important;
+  transform: translate(-50%, -50%) !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 14'%3E%3Cpath d='M11,9 C8,5 4,4 2,6 C4,9 8,10 11,9 Z' fill='%234ade80' stroke='%23141f17' stroke-width='0.8'/%3E%3Cpath d='M11,9 C14,5 18,4 20,6 C18,9 14,10 11,9 Z' fill='%2386efac' stroke='%23141f17' stroke-width='0.8'/%3E%3Ccircle cx='11' cy='9' r='1.8' fill='%23e09f3e'/%3E%3C/svg%3E") !important;
+  filter: drop-shadow(0 0 4px rgba(74, 222, 128, 0.45)) !important;
+  pointer-events: none !important;
 }
 
 /* Metric Boxes */
 .atlas-statblock [data-block="metric"],
 .atlas-sb-pane-card [data-block="metric"] {
-  background: var(--sylvan-moss) !important;
+  background: linear-gradient(180deg, rgba(26, 42, 30, 0.94) 0%, rgba(20, 31, 23, 0.9) 100%) !important;
   border: 1px solid var(--sylvan-border) !important;
   border-left: 3px solid var(--sylvan-leaf) !important;
   border-radius: 6px !important;
   padding: 6px 10px !important;
+  box-shadow: inset 0 1px 0 rgba(134, 239, 172, 0.08) !important;
 }
 
 /* Ability Scores & Currency Tables */
@@ -172,8 +217,6 @@
   --table-border-color: transparent !important;
   overflow: visible !important;
 }
-
-
 
 .atlas-statblock [data-block-id="0ghhsttd"],
 .atlas-sb-pane-card [data-block-id="0ghhsttd"] {
@@ -191,7 +234,7 @@
 
 .atlas-statblock [data-block-id="0ghhsttd"] th,
 .atlas-sb-pane-card [data-block-id="0ghhsttd"] th {
-  background: var(--sylvan-moss) !important;
+  background: rgba(26, 42, 30, 0.92) !important;
   color: var(--sylvan-amber) !important;
   border: 1px solid var(--sylvan-border) !important;
   border-radius: 4px !important;
@@ -203,7 +246,7 @@
 
 .atlas-statblock [data-block-id="0ghhsttd"] td,
 .atlas-sb-pane-card [data-block-id="0ghhsttd"] td {
-  background: var(--sylvan-bark) !important;
+  background: rgba(33, 26, 20, 0.88) !important;
   color: var(--text-normal) !important;
   border: 1px solid var(--sylvan-border) !important;
   border-radius: 4px !important;
@@ -221,7 +264,7 @@
 /* Tabs */
 .atlas-statblock [role="tablist"],
 .atlas-sb-pane-card [role="tablist"] {
-  background: var(--sylvan-bark) !important;
+  background: rgba(33, 26, 20, 0.9) !important;
   border: 1px solid var(--sylvan-wood-trim) !important;
   border-radius: 5px !important;
   padding: 2px !important;
@@ -333,7 +376,9 @@
 .atlas-sb-pane-card [data-block-id="c5pb0000"] .checkbox-container .checkbox-container-thumb {
   background-color: #141f17 !important;
   border: 1px solid #3d5240 !important;
-}/* ==========================================================================
+}
+
+/* ==========================================================================
    SCENE TOKEN PREVIEW WINDOW FIX
    ========================================================================== */
 
@@ -343,8 +388,12 @@
 .atlas-vtt-plugin .atlas-statblock-link__preview .atlas-statblock-body {
   background-color: var(--sylvan-bg) !important;
   background-image: 
+    var(--sylvan-footer-bed),
     radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
-    linear-gradient(180deg, rgba(33, 26, 20, 0.55) 0%, transparent 100%) !important;
+    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat !important;
+  background-position: bottom center, top left, center !important;
+  background-size: 100% 120px, 100% 100%, 100% 100% !important;
   color: var(--text-normal) !important;
   --text-normal: #f0ead8 !important;
   --text-muted: #a6b5a7 !important;
@@ -360,6 +409,7 @@
   border-radius: 8px !important;
   overflow: visible !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: SYLVAN WOODCRAFT INPUT, DROPDOWN & ENTRY EDITOR THEME
    ========================================================================== */
@@ -467,6 +517,7 @@
     -webkit-box-shadow: 0 0 0px 1000px var(--sylvan-bark) inset !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
+
 /* ==========================================================================
    RESET COUNTER BUTTON: HOLLOW INTERIOR & LIVING LEAF STROKE
    ========================================================================== */
@@ -511,6 +562,7 @@
   filter: drop-shadow(0 0 8px var(--sylvan-leaf-glow, rgba(74, 222, 128, 0.5))) !important;
   transform: rotate(-30deg) !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: RADIX & LISTBOX DROPDOWN POPUPS (SYLVAN WOODCRAFT)
    ========================================================================== */
@@ -565,6 +617,7 @@
   background: #3d5240 !important;
   height: 1px !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: SYLVAN WOODCRAFT LINK HOVER POPOVERS & NATIVE SHEET TABLES
    ========================================================================== */
@@ -572,8 +625,12 @@
 .popover.hover-popover {
   background-color: var(--sylvan-bg, #141f17) !important;
   background-image: 
+    var(--sylvan-footer-bed),
     radial-gradient(circle at 15% 0%, rgba(74, 222, 128, 0.08), transparent 55%),
-    linear-gradient(180deg, rgba(33, 26, 20, 0.55) 0%, transparent 100%) !important;
+    linear-gradient(180deg, #17221a 0%, #0f1712 100%) !important;
+  background-repeat: no-repeat, no-repeat, no-repeat !important;
+  background-position: bottom center, top left, center !important;
+  background-size: 100% 120px, 100% 100%, 100% 100% !important;
   border: 2px solid var(--sylvan-wood-trim, #785331) !important;
   border-radius: 6px !important;
   box-shadow: 
@@ -635,7 +692,7 @@
 .atlas-statblock .atlas-sb-sheet-table__grid thead th,
 .atlas-sb-pane-card .atlas-sb-sheet-table__grid thead th,
 .atlas-sb-sheet .atlas-sb-sheet-table__grid thead th {
-  background-color: var(--sylvan-moss, #1a2a1e) !important;
+  background-color: rgba(26, 42, 30, 0.92) !important;
   color: var(--sylvan-amber, #e09f3e) !important;
   border-color: var(--sylvan-border, #3d5240) !important;
   font-weight: 700 !important;
@@ -644,7 +701,7 @@
 .atlas-statblock .atlas-sb-sheet-table__grid tbody td,
 .atlas-sb-pane-card .atlas-sb-sheet-table__grid tbody td,
 .atlas-sb-sheet .atlas-sb-sheet-table__grid tbody td {
-  background-color: var(--sylvan-bark, #211a14) !important;
+  background-color: rgba(33, 26, 20, 0.88) !important;
   color: var(--text-normal, #f0ead8) !important;
   border-color: var(--sylvan-border, #3d5240) !important;
 }
@@ -652,6 +709,7 @@
 .atlas-sb-sheet-table__handle svg {
   stroke: var(--sylvan-leaf, #4ade80) !important;
 }
+
 /* ==========================================================================
    ATLAS VTT: ACTION-USE PIPS & OPEN ABILITY SCORES (SYLVAN WOODCRAFT)
    ========================================================================== */
@@ -684,7 +742,7 @@
 }
 
 .atlas-statblock input[type="checkbox"].action-use:after,
-.atlas-sb-pane-card input[type="checkbox"].action-use:after,
+.atlas-sb-pane-card input[type="checkbox"].action-user:after,
 .atlas-sb-sheet input[type="checkbox"].action-use:after {
   display: none !important;
 }
