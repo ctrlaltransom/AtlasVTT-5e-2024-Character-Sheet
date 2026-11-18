@@ -1,0 +1,73 @@
+/* 1. Tighten vertical gap between skill rows */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-stack,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0px !important;
+}
+
+/* 2. Give each skill row a compact, isolated 3-column grid with minimal height */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row {
+  display: grid !important;
+  grid-template-columns: 1.25rem 11.2rem auto !important;
+  justify-content: start !important;
+  gap: 6px !important;
+  align-items: center !important;
+  padding-top: 0px !important;
+  padding-bottom: 1px !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* 3. Column 1: Keep the proficiency diamond & its interactive dropdown intact */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:first-child,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:first-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+
+/* 4. Columns 2 & 3: Unwrap only the static label & value wrappers on the skill item */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]),
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]) > .atlas-sb-labelled,
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]) .atlas-sb-pane-slot,
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]) .atlas-sb-pane-slot__rest,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]),
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]) > .atlas-sb-labelled,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]) .atlas-sb-pane-slot,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child:not([data-state="editing"]) .atlas-sb-pane-slot__rest {
+  display: contents !important;
+}
+
+/* 5. Column 2: Skill Name */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-label,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-label {
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* 6. Column 3: Skill Modifier */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child .atlas-sb-value,
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child .atlas-sb-value {
+  text-align: right !important;
+  min-width: 1.75rem !important;
+  font-variant-numeric: tabular-nums !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+
+/* 7. Keep override input spanning Columns 2–3 cleanly when clicked */
+.atlas-statblock [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child[data-state="editing"],
+.atlas-sb-pane-card [data-block-id="c5skgrp0"] .atlas-sb-row > .atlas-sb-item:last-child[data-state="editing"] {
+  grid-column: 2 / -1 !important;
+}
