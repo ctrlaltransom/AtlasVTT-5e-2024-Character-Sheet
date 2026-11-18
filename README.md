@@ -36,7 +36,8 @@
 - I made a CSS snippet (`aligned-skills.css`) to make the skills section display more neatly, which is a workaround similar to the previous snippet. Download it below or [here](https://discord.com/channels/1551361618305224816/1562121042963472498/1572314007996600362) and install it the same way as the themes.
 
 ### Integrations
-- This character sheet is the basis of [the D&D Beyond importer plugin](https://community.obsidian.md/plugins/dndbeyond-importer-for-atlas) by @young_george.
+- This character sheet is the basis of [the D&D Beyond importer plugin](https://community.obsidian.md/plugins/dndbeyond-importer-for-atlas) by @young_george from the Discord.
+- Also by @young_george, this repo is intended to work with the Statblock Template Installer for Atlas. More about that below.
 
 ### Modified Sheets
 - You can modify this sheet to play homebrewed or other modified versions of D&D like Mage Hand Press' sci-fi version, Dark Matter. I modified this template for Dark Matter already—it is included in this repository as `Dark-Matter-Character-Sheet.atlastemplate` (and posted [here](https://discord.com/channels/1551361618305224816/1572354559685435442)).
