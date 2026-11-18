@@ -46,7 +46,7 @@ Place your chosen `.atlastemplate` file inside `<Your Vault>/statblock-templates
 | **5e (2024) Core** | D&D 5.5e (SRD 5.2.1) | [View 5e (2024) Character Sheet](5e-(2024)-Character-Sheet.atlastemplate) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-5e-2024-Character-Sheet/main/5e-(2024)-Character-Sheet.atlastemplate) |
 | **Dark Matter** | 5.5e + Mage Hand Press Sci-Fi | [View Dark Matter Character Sheet](Dark-Matter-Character-Sheet.atlastemplate) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-5e-2024-Character-Sheet/main/Dark-Matter-Character-Sheet.atlastemplate) |
 
-### Functional Layout Snippets (Optional — Mix & Match)
+### Functional Layout Snippets (Optional; all are recommended)
 Place inside `<Your Vault>/.obsidian/snippets/` and toggle on in **Settings → Appearance → CSS snippets**. You can enable any combination of these alongside a theme.
 
 | Snippet | Purpose | View File | Direct Download |
@@ -55,7 +55,7 @@ Place inside `<Your Vault>/.obsidian/snippets/` and toggle on in **Settings → 
 | **Spellcasting Metric Box** | Styles Ability, Save DC, and Atk Bonus to match the Combat & Defense box | [spellcasting-metric-box.css](spellcasting-metric-box.css) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-5e-2024-Character-Sheet/main/spellcasting-metric-box.css) |
 | **Two-Column Hover Preview** | Forces token hover previews in scenes to render in two columns | [two-column-hover.css](two-column-hover.css) | [Download](https://raw.githubusercontent.com/ctrlaltransom/AtlasVTT-5e-2024-Character-Sheet/main/two-column-hover.css) |
 
-### Visual Themes (Optional — Enable Only One)
+### Visual Themes (Optional; enable only one)
 Place inside `<Your Vault>/.obsidian/snippets/` and enable **one** theme at a time.
 
 | Theme | Aesthetic | View File | Direct Download |
