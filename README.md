@@ -22,7 +22,6 @@
 
 ## Known Issues
 - I have not tested the template with the closed beta feature of Atlas called Atlas Online, or the unofficial community plugin Connect for Atlas. I have received multiple reports of the template displaying badly in both of those, but I do not plan to investigate the issue until the official Online feature is in a full release for stability reasons.
-- There currently is no support for proficiency in ability saves.
 - Atlas currently does not support adding dice rolls to other dice rolls with a button like the proficiency bonus. That means the bonus dice field cannot be automatically added to rolls.
 
 ## Additional Features
