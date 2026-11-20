@@ -1,6 +1,6 @@
 {
   "format": "atlas-statblock-template",
-  "version": 1,
+  "version": 2,
   "id": "dark-matter-character-sheet-7r8tqz",
   "description": "Dark Matter by Mage Hand Press character sheet, as comprehensive as possible",
   "diceSetId": "builtin:d20",
@@ -89,7 +89,7 @@
       "counterRows": [
         {
           "name": "Inspiration",
-          "max": 1
+          "max": 1, "used":1
         }
       ]
     },
@@ -146,7 +146,7 @@
       "counterRows": [
         {
           "name": "Success",
-          "max": 3
+          "max": 3,"used":3
         }
       ]
     },
@@ -157,7 +157,7 @@
       "counterRows": [
         {
           "name": "Failure",
-          "max": 3
+          "max": 3,"used":3
         }
       ]
     },

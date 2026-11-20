@@ -1,117 +1,134 @@
-/* 1. Box Container */
+/* 1. Outer Card Wrapper — opaque across themes, overridable by custom themes */
 .atlas-statblock [data-block-id="c5scst00"],
 .atlas-sb-pane-card [data-block-id="c5scst00"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    border: 1px solid var(--background-modifier-border) !important;
-    border-radius: var(--radius-m, 6px) !important;
-    padding: 8px !important;
-    margin-top: 8px !important;
-    margin-bottom: 8px !important;
-    box-shadow: none !important;
-    box-sizing: border-box !important;
+  background: var(--sb-parchment-elevated, var(--sylvan-moss, var(--background-secondary, var(--background-primary))));
+  border: 1px solid var(--sb-parchment-border, var(--sylvan-border, var(--background-modifier-border)));
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin: 8px 0 !important;
+  box-shadow: none;
+  box-sizing: border-box !important;
 }
 
-/* 2. Heading: Force match to .atlas-sb-metric__heading */
-.atlas-statblock [data-block-id="c5scst00"] > .atlas-sb-item-section__title,
-.atlas-statblock [data-block-id="c5scst00"] > .atlas-sb-section-heading,
-.atlas-statblock [data-block-id="c5scst00"] h2,
-.atlas-sb-pane-card [data-block-id="c5scst00"] > .atlas-sb-item-section__title,
-.atlas-sb-pane-card [data-block-id="c5scst00"] > .atlas-sb-section-heading,
-.atlas-sb-pane-card [data-block-id="c5scst00"] h2 {
-    font-family: inherit !important;
-    color: var(--sb-ink, var(--text-normal, #1f140e)) !important;
-    font-size: 0.72rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
-    text-align: center !important;
-    border-bottom: none !important;
-    margin: 0 0 6px 0 !important;
-    padding: 0 !important;
+/* 2. Inner Rounded Pill Container — matches .atlas-sb-metric */
+.atlas-statblock [data-block-id="c5scst00"] > :last-child,
+.atlas-sb-pane-card [data-block-id="c5scst00"] > :last-child {
+  border: 1px solid color-mix(in srgb, var(--sb-ink, var(--text-normal, currentColor)) 22%, transparent) !important;
+  border-radius: 10px !important;
+  padding: 7px 8px 8px 8px !important;
+  background: transparent !important;
+  position: relative !important;
 }
 
-/* 3. Kill the horizontal rule line completely */
-.atlas-statblock [data-block-id="c5scst00"] > hr,
-.atlas-statblock [data-block-id="c5scst00"] > .atlas-sb-rule,
-.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-rule,
-.atlas-sb-pane-card [data-block-id="c5scst00"] > hr,
-.atlas-sb-pane-card [data-block-id="c5scst00"] > .atlas-sb-rule,
-.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-rule {
-    display: none !important;
+/* 3. Heading ("SPELLCASTING") — matches .atlas-sb-metric__heading */
+.atlas-statblock [data-block-id="c5scst00"] > :is(.atlas-sb-heading, .atlas-sb-section-heading, .atlas-sb-item-section__title, h2),
+.atlas-sb-pane-card [data-block-id="c5scst00"] > :is(.atlas-sb-heading, .atlas-sb-section-heading, .atlas-sb-item-section__title, h2) {
+  font-family: inherit !important;
+  color: var(--sb-ink, var(--text-normal)) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 0 -22px 0 !important;
+  padding-top: 8px !important;
+  line-height: 1.2 !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
-/* 4. Full-width 3-Column Even Distribution (Centers single item when empty) */
+/* Push the 3-column row down below the centered heading inside the inner box */
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-row,
 .atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-row {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    justify-content: center !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 22px 0 0 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
 }
 
-/* 5. Each Column: 33.33% Width when populated, 100% centered when alone */
+/* 4. Suppress Section Horizontal Rule */
+.atlas-statblock [data-block-id="c5scst00"] :is(hr, .atlas-sb-rule),
+.atlas-sb-pane-card [data-block-id="c5scst00"] :is(hr, .atlas-sb-rule) {
+  display: none !important;
+}
+
+/* 5. Individual Metric Columns — matches .atlas-sb-metric__number */
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item,
 .atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item {
-    flex: 1 1 0% !important;
-    width: 33.333% !important;
-    max-width: 33.333% !important;
-    min-width: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 0 4px !important;
-    box-sizing: border-box !important;
+  flex: 1 1 0% !important;
+  width: 33.333% !important;
+  max-width: 33.333% !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 0 6px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
 }
 
+/* Center single prompt item when spellcasting_ability is empty */
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item:only-child,
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item[data-state="prompt"],
 .atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item:only-child,
 .atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item[data-state="prompt"] {
-    width: 100% !important;
-    max-width: 100% !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-/* 6. Vertical Dividers Between Columns */
+/* 6. Vertical Column Dividers */
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item + .atlas-sb-item,
 .atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-row > .atlas-sb-item + .atlas-sb-item {
-    border-left: 1px solid var(--background-modifier-border) !important;
+  border-left: 1px solid color-mix(in srgb, var(--sb-ink, var(--text-normal, currentColor)) 20%, transparent) !important;
+  border-radius: 0 !important;
 }
 
-/* 7. Top Label Text */
+/* 7. Sub-Labels ("ABILITY", "SAVE DC", "ATK BONUS") */
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-label,
-.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-stacked-label,
-.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-label,
-.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-stacked-label {
-    font-size: 0.65rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
-    color: var(--text-muted, #645347) !important;
-    margin-bottom: 2px !important;
+.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-label {
+  font-family: inherit !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+  margin: 0 0 2px 0 !important;
+  padding: 0 !important;
+  line-height: 1.2 !important;
 }
 
-/* 8. Bottom Numbers / Values */
-.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-stacked-value,
-.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-stat,
-.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-stacked-value,
-.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-stat {
-    font-size: 1.15rem !important;
-    font-weight: 700 !important;
-    line-height: 1.1 !important;
-    color: var(--sb-ink, var(--text-normal, #1f140e)) !important;
+/* 8. Values ("WIS", "12", "+4") */
+.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-value,
+.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-value .atlas-sb-markdown,
+.atlas-statblock [data-block-id="c5scst00"] .atlas-sb-value .atlas-dice-link,
+.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-value,
+.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-value .atlas-sb-markdown,
+.atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-value .atlas-dice-link {
+  font-family: inherit !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  color: var(--sb-ink, var(--text-normal)) !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* 9. Empty Prompt Text ("Add ability") */
+/* 9. Empty Prompt Text */
 .atlas-statblock [data-block-id="c5scst00"] .atlas-sb-prompt,
 .atlas-sb-pane-card [data-block-id="c5scst00"] .atlas-sb-prompt {
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    color: var(--text-muted, #645347) !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: var(--text-muted) !important;
 }

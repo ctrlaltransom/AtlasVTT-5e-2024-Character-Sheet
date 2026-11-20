@@ -1,6 +1,6 @@
 {
   "format": "atlas-statblock-template",
-  "version": 1,
+  "version": 2,
   "id": "5e-2024-character-sheet-4r8tqz",
   "description": "5E (2024 rules) character sheet, as comprehensive as possible",
   "diceSetId": "builtin:d20",
@@ -89,7 +89,8 @@
       "counterRows": [
         {
           "name": "Inspiration",
-          "max": 1
+          "max": 1,
+          "used": 1
         }
       ]
     },
@@ -146,7 +147,8 @@
       "counterRows": [
         {
           "name": "Success",
-          "max": 3
+          "max": 3,
+          "used": 3
         }
       ]
     },
@@ -157,7 +159,8 @@
       "counterRows": [
         {
           "name": "Failure",
-          "max": 3
+          "max": 3,
+          "used": 3
         }
       ]
     },
@@ -862,11 +865,6 @@
             "type": "text"
           },
           {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
-          },
-          {
             "key": "damage",
             "label": "Damage",
             "type": "dice"
@@ -909,11 +907,6 @@
             "key": "cost",
             "label": "Cost",
             "type": "text"
-          },
-          {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
           },
           {
             "key": "damage",
@@ -960,11 +953,6 @@
             "type": "text"
           },
           {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
-          },
-          {
             "key": "damage",
             "label": "Damage",
             "type": "dice"
@@ -1007,11 +995,6 @@
             "key": "cost",
             "label": "Cost",
             "type": "text"
-          },
-          {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
           },
           {
             "key": "damage",
@@ -1058,11 +1041,6 @@
             "type": "text"
           },
           {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
-          },
-          {
             "key": "damage",
             "label": "Damage",
             "type": "dice"
@@ -1105,11 +1083,6 @@
             "key": "cost",
             "label": "Cost",
             "type": "text"
-          },
-          {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
           },
           {
             "key": "damage",
@@ -1156,11 +1129,6 @@
             "type": "text"
           },
           {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
-          },
-          {
             "key": "damage",
             "label": "Damage",
             "type": "dice"
@@ -1203,11 +1171,6 @@
             "key": "cost",
             "label": "Cost",
             "type": "text"
-          },
-          {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
           },
           {
             "key": "damage",
@@ -1254,11 +1217,6 @@
             "type": "text"
           },
           {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
-          },
-          {
             "key": "damage",
             "label": "Damage",
             "type": "dice"
@@ -1301,11 +1259,6 @@
             "key": "cost",
             "label": "Cost",
             "type": "text"
-          },
-          {
-            "key": "attack",
-            "label": "Attack",
-            "type": "dice"
           },
           {
             "key": "damage",
@@ -1406,17 +1359,17 @@
         ],
         "rollable": true
       },
-{
-  "id": "c5pb0000",
-  "type": "stat",
-  "field": "pb",
-  "label": "Proficiency Bonus",
-  "look": "run-in",
-  "whenEmpty": "fallback",
-  "fallback": "{=floor((level - 1) / 4) + 2}",
+      {
+        "id": "c5pb0000",
+        "type": "stat",
+        "field": "pb",
+        "label": "Proficiency Bonus",
+        "look": "run-in",
+        "whenEmpty": "fallback",
+        "fallback": "{=floor((level - 1) / 4) + 2}",
         "rollable": true,
         "addsToRolls": true
-},
+      },
       {
         "id": "c5hd0000",
         "type": "stat",
@@ -1472,7 +1425,8 @@
         "id": "c5stats0",
         "type": "scores",
         "field": "stats",
-        "orientation": "columns",
+        "orientation": "table",
+        "perLine": 3,
         "columns": [
           {
             "label": "Mod",
@@ -3392,6 +3346,10 @@
       {
         "id": "c5scgrp0",
         "type": "section",
+        "showWhen": {
+          "field": "spellcasting_ability",
+          "is": "present"
+        },
         "blocks": [
           {
             "id": "c5scst00",
@@ -3504,24 +3462,16 @@
               }
             ]
           },
-{
+          {
             "id": "c5slots0",
             "type": "counters",
             "field": "slots",
             "label": "Spell Slots",
-            "whenEmpty": "hide",
-            "showWhen": {
-              "field": "spellcasting_ability",
-              "is": "present"
-            }
+            "whenEmpty": "hide"
           },
           {
             "id": "j7pweyvi",
             "type": "tabs",
-            "showWhen": {
-              "field": "spellcasting_ability",
-              "is": "present"
-            },
             "blocks": [
               {
                 "id": "0u0564c6",
@@ -3648,79 +3598,73 @@
         ]
       },
       {
-        "id": "c5trtgrp",
-        "type": "section",
+        "id": "c5cres01",
+        "type": "counters",
+        "field": "class_resources",
+        "label": "Class & Feature Resources"
+      },
+      {
+        "id": "p24trt00",
+        "type": "tabs",
         "heading": "Features & Traits",
         "blocks": [
           {
-            "id": "c5cres01",
-            "type": "counters",
-            "field": "class_resources",
-            "label": "Class & Feature Resources"
-          },
-          {
-            "id": "p24trt00",
-            "type": "tabs",
+            "id": "c5cfsec0",
+            "type": "section",
+            "heading": "Class Features",
             "blocks": [
               {
-                "id": "c5cfsec0",
-                "type": "section",
-                "heading": "Class Features",
-                "blocks": [
-                  {
-                    "id": "c5cfeat0",
-                    "type": "entries",
-                    "field": "class_features",
-                    "addLabel": "Add class feature"
-                  },
-                  {
-                    "id": "c5cfuse1",
-                    "type": "counters",
-                    "field": "class_feature_uses",
-                    "label": "Class Feature Uses",
-                    "whenEmpty": "hide"
-                  }
-                ]
+                "id": "c5cfeat0",
+                "type": "entries",
+                "field": "class_features",
+                "addLabel": "Add class feature"
               },
               {
-                "id": "c5stsec0",
-                "type": "section",
-                "heading": "Species Traits",
-                "blocks": [
-                  {
-                    "id": "c5sptra0",
-                    "type": "entries",
-                    "field": "species_traits",
-                    "addLabel": "Add species trait"
-                  },
-                  {
-                    "id": "c5stuse1",
-                    "type": "counters",
-                    "field": "species_trait_uses",
-                    "label": "Species Trait Uses",
-                    "whenEmpty": "hide"
-                  }
-                ]
+                "id": "c5cfuse1",
+                "type": "counters",
+                "field": "class_feature_uses",
+                "label": "Class Feature Uses",
+                "whenEmpty": "hide"
+              }
+            ]
+          },
+          {
+            "id": "c5stsec0",
+            "type": "section",
+            "heading": "Species Traits",
+            "blocks": [
+              {
+                "id": "c5sptra0",
+                "type": "entries",
+                "field": "species_traits",
+                "addLabel": "Add species trait"
               },
               {
-                "id": "c5fasec0",
-                "type": "section",
-                "heading": "Feats",
-                "blocks": [
-                  {
-                    "id": "c5feats0",
-                    "type": "entries",
-                    "field": "feats",
-                    "addLabel": "Add feat"
-                  },
-                  {
-                    "id": "c5ftuse1",
-                    "type": "counters",
-                    "field": "feat_uses",
-                    "label": "Feat Uses",
-                    "whenEmpty": "hide"
-                  }
-                ]
+                "id": "c5stuse1",
+                "type": "counters",
+                "field": "species_trait_uses",
+                "label": "Species Trait Uses",
+                "whenEmpty": "hide"
+              }
+            ]
+          },
+          {
+            "id": "c5fasec0",
+            "type": "section",
+            "heading": "Feats",
+            "blocks": [
+              {
+                "id": "c5feats0",
+                "type": "entries",
+                "field": "feats",
+                "addLabel": "Add feat"
+              },
+              {
+                "id": "c5ftuse1",
+                "type": "counters",
+                "field": "feat_uses",
+                "label": "Feat Uses",
+                "whenEmpty": "hide"
               }
             ]
           }
@@ -3869,6 +3813,27 @@
     "speed": 30,
     "pb": 2,
     "hp": 12,
+    "heroic_inspiration": [
+      {
+        "name": "Inspiration",
+        "max": 1,
+        "used": 1
+      }
+    ],
+    "death_save_success": [
+      {
+        "name": "Success",
+        "max": 3,
+        "used": 3
+      }
+    ],
+    "death_save_failure": [
+      {
+        "name": "Failure",
+        "max": 3,
+        "used": 3
+      }
+    ],
     "stats": [
       15,
       14,
